@@ -13,39 +13,36 @@ namespace PortTodo.Backend.WebApi.Tests.Data.Repositories
     [TestCaseOrderer(PriorityOrderer.Name, PriorityOrderer.Assembly)]
     public class CardRepositoryTests
     {
+        private readonly CardRepository _cardRepository;
+        public CardRepositoryTests()
+        {
+            var options = new DbContextOptionsBuilder<TodoContext>()
+                .UseInMemoryDatabase(databaseName: "Todo-Test")
+                .Options;
+            
+            var mediatorHandlerMock = new Mock<IMediatorHandler>();
+            var context = new TodoContext(options, mediatorHandlerMock.Object);
+
+            _cardRepository = new CardRepository(context);
+        }
+        
         
         [Fact(DisplayName = "Create new card with success"), Priority(0)]
         public async Task CardRepository_Add_ShouldWithSuccess()
         {
-
-            var options = new DbContextOptionsBuilder<TodoContext>()
-                .UseInMemoryDatabase(databaseName: "Todo-Test")
-                .Options;
-
-            var mediatorHandlerMock = new Mock<IMediatorHandler>();
-            var context = new TodoContext(options, mediatorHandlerMock.Object);
-
-            var cardRepository = new CardRepository(context);
-            cardRepository.Add(FakeCard.FakeValidCard());
             
-            Assert.True(await cardRepository.UnitOfWork.Commit());
+            _cardRepository.Add(FakeCard.FakeValidCard());
+            
+            Assert.True(await _cardRepository.UnitOfWork.Commit());
         }
 
         [Fact(DisplayName = "GetById card"), Priority(1)]
         public async Task CardRepository_GetById_ShouldAreEqual()
         {
-            var options = new DbContextOptionsBuilder<TodoContext>()
-                .UseInMemoryDatabase(databaseName: "Todo-Test")
-                .Options;
-
-            var mediatorHandlerMock = new Mock<IMediatorHandler>();
-            var context = new TodoContext(options, mediatorHandlerMock.Object);
-
-            var cardRepository = new CardRepository(context);
             var card = FakeCard.FakeValidCard();
             
             
-            var cardVerify = await cardRepository.GetById(card.Id);
+            var cardVerify = await _cardRepository.GetById(card.Id);
 
             Assert.Equal(card.Id.ToString(), cardVerify.Id.ToString());
         }
@@ -53,16 +50,7 @@ namespace PortTodo.Backend.WebApi.Tests.Data.Repositories
         [Fact(DisplayName = "GetAll Card"), Priority(2)]
         public async Task CardRepository_GetAll_ShouldAreEqual()
         {
-            var options = new DbContextOptionsBuilder<TodoContext>()
-                .UseInMemoryDatabase(databaseName: "Todo-Test")
-                .Options;
-
-            var mediatorHandlerMock = new Mock<IMediatorHandler>();
-            var context = new TodoContext(options, mediatorHandlerMock.Object);
-
-            var cardRepository = new CardRepository(context);
-
-            var cardsGetAll = await cardRepository.GetAll();
+            var cardsGetAll = await _cardRepository.GetAll();
 
             Assert.Single(cardsGetAll);
         }
@@ -70,19 +58,11 @@ namespace PortTodo.Backend.WebApi.Tests.Data.Repositories
         [Fact(DisplayName = "RemoveAll Card"), Priority(3)]
         public async Task CardRepository_RemoveAll_ShouldAreEqual()
         {
-            var options = new DbContextOptionsBuilder<TodoContext>()
-                .UseInMemoryDatabase(databaseName: "Todo-Test")
-                .Options;
-
-            var mediatorHandlerMock = new Mock<IMediatorHandler>();
-            var context = new TodoContext(options, mediatorHandlerMock.Object);
-
-            var cardRepository = new CardRepository(context);
-            cardRepository.Remove(FakeCard.FakeValidCard());
+            _cardRepository.Remove(FakeCard.FakeValidCard());
             
-            Assert.True(await cardRepository.UnitOfWork.Commit());
+            Assert.True(await _cardRepository.UnitOfWork.Commit());
 
-            Assert.Empty(await cardRepository.GetAll());
+            Assert.Empty(await _cardRepository.GetAll());
             
         }
     }
