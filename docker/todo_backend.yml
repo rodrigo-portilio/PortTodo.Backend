@@ -1,0 +1,51 @@
+version: "3"
+
+services:
+
+    postgres:
+        image: rodrigoportilio/porttodo-backend-postgres:latest
+        container_name: postgres-porttodo
+        build:
+            context: ../sql
+            dockerfile: ./Dockerfile
+        environment: 
+            POSTGRES_PASSWORD: 'Aa@123456789'
+            POSTGRES_DB: PortTodo
+        ports:
+            - "5432:5432"   
+        networks:
+            - porttodo-backend-network
+
+    redis:
+        image: 'bitnami/redis:latest'
+        container_name: redis-porttodo
+        ports:
+            - 6379:6379
+        environment:
+            - ALLOW_EMPTY_PASSWORD=yes
+        networks:
+            - porttodo-backend-network
+
+    web-api:
+        image: rodrigoportilio/porttodo-backend-web-api:latest
+        container_name: porttodo-backend-web-api        
+        build:
+            context: ../src
+            dockerfile: ./PortTodo.Backend.WebApi/Dockerfile
+        ports:
+            - "5000:5000"
+        environment:
+            - ASPNETCORE_ENVIRONMENT=Production
+            - ASPNETCORE_URLS=http://*:5000
+            - POSTGRESQL_CONNECTION=Host=postgres-porttodo;Port=5432;Pooling=true;Database=PortTodo;User Id=postgres;Password=Aa@123456789;
+            - REDIS_CONNECTION=redis-porttodo:6379
+        depends_on:
+            - postgres
+            - redis
+        networks:
+            - porttodo-backend-network
+
+
+networks:
+    porttodo-backend-network:
+        driver: bridge

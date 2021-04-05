@@ -1,0 +1,12 @@
+.idea
+
+# User-specific files
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# Build results
+[Bb]in/
+[Oo]bj/
+/tests/PortTodo.Backend.WebApi.Tests/coverage.json
