@@ -4,6 +4,9 @@ This project is opensource project written in .NET 5
 The goal of this project is to implement several technologies and share with the technical community.
 
 [![Codacy Badge](https://app.codacy.com/project/badge/Grade/c362f05eddd4401faf49a0a6615a40ad)](https://www.codacy.com/gh/rodrigo-portilio/PortTodo.Backend/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=rodrigo-portilio/PortTodo.Backend&amp;utm_campaign=Badge_Grade)
+[![PortTodo](https://circleci.com/gh/rodrigo-portilio/PortTodo.Backend.svg?style=svg)](https://circleci.com/gh/rodrigo-portilio/PortTodo.Backend)
+
+
 
 **IN DEVELOPING**
 
