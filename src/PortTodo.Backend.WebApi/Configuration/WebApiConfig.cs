@@ -5,7 +5,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using PortTodo.Backend.WebApi.Data;
+using PortTodo.Backend.Infra.Data;
 
 namespace PortTodo.Backend.WebApi.Configuration
 {

@@ -1,5 +1,6 @@
 ﻿using System;
-using PortTodo.Backend.WebApi.Models;
+using PortTodo.Backend.Domain.Models;
+using PortTodo.Backend.WebApi.Core.Messages;
 using Xunit;
 
 namespace PortTodo.Backend.WebApi.Tests.Models
@@ -31,12 +32,35 @@ namespace PortTodo.Backend.WebApi.Tests.Models
         }
         
         [Fact(DisplayName = "Change Status Card to InProgress")]
-        public void Card_ChangeStatus_ShouldBeStatusInProgress()
+        public void Card_ChangeStatus_ShouldAreStatusInProgress()
         {
             Card card = new(Guid.NewGuid(), "New Card Test");
             card.ChangeStatus(CardStatus.InProgress);
             
             Assert.Equal(CardStatus.InProgress, card.Status);
+        }
+        
+        [Fact(DisplayName = "Remove notification")]
+        public void Card_RemoveNotification_ShouldAreEqual()
+        {
+            Card card = new(Guid.NewGuid(), "New Card Test");
+            var notification = new Notification();
+            card.AddNotification(notification);
+            
+            card.RemoveNotification(notification);
+            
+            Assert.Empty(card.Notifications);
+        }
+        
+        [Fact(DisplayName = "Remove all notifications")]
+        public void Card_ClearNotifications_ShouldAreEqual()
+        {
+            Card card = new(Guid.NewGuid(), "New Card Test");
+            card.AddNotification(new Notification());
+            
+            card.ClearNotifications();
+            
+            Assert.Empty(card.Notifications);
         }
     }
 }

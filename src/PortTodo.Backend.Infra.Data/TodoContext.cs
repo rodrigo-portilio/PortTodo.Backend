@@ -2,12 +2,12 @@ using System.Linq;
 using System.Threading.Tasks;
 using FluentValidation.Results;
 using Microsoft.EntityFrameworkCore;
+using PortTodo.Backend.Core.Data;
+using PortTodo.Backend.Domain.Models;
 using PortTodo.Backend.WebApi.Core.Mediator;
 using PortTodo.Backend.WebApi.Core.Messages;
-using PortTodo.Backend.WebApi.Models;
-using PortTodo.Backend.WebApi.Models.Interfaces;
 
-namespace PortTodo.Backend.WebApi.Data
+namespace PortTodo.Backend.Infra.Data
 {
     public sealed class TodoContext : DbContext, IUnitOfWork
     {

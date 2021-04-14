@@ -1,4 +1,4 @@
-namespace PortTodo.Backend.WebApi.Models.Interfaces
+namespace PortTodo.Backend.Core.Data
 {
     public interface IAggregateRoot
     {

@@ -3,9 +3,9 @@ using Xunit;
 using Xunit.Priority;
 using Microsoft.EntityFrameworkCore;
 using Moq;
+using PortTodo.Backend.Infra.Data;
+using PortTodo.Backend.Infra.Data.Repositories;
 using PortTodo.Backend.WebApi.Core.Mediator;
-using PortTodo.Backend.WebApi.Data;
-using PortTodo.Backend.WebApi.Data.Repositories;
 
 namespace PortTodo.Backend.WebApi.Tests.Data.Repositories
 {

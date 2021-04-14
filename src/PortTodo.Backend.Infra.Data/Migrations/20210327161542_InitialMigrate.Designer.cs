@@ -5,9 +5,8 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Migrations;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
-using PortTodo.Backend.WebApi.Data;
 
-namespace PortTodo.Backend.WebApi.Migrations
+namespace PortTodo.Backend.Infra.Data.Migrations
 {
     [DbContext(typeof(TodoContext))]
     [Migration("20210327161542_InitialMigrate")]

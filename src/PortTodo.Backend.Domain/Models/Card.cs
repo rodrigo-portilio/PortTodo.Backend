@@ -1,7 +1,7 @@
 using System;
-using PortTodo.Backend.WebApi.Models.Interfaces;
+using PortTodo.Backend.Core.Data;
 
-namespace PortTodo.Backend.WebApi.Models
+namespace PortTodo.Backend.Domain.Models
 {
     public enum CardStatus
     {

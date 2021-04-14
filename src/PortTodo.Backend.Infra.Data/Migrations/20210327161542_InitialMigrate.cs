@@ -1,7 +1,7 @@
 ﻿using System;
 using Microsoft.EntityFrameworkCore.Migrations;
 
-namespace PortTodo.Backend.WebApi.Migrations
+namespace PortTodo.Backend.Infra.Data.Migrations
 {
     public partial class InitialMigrate : Migration
     {

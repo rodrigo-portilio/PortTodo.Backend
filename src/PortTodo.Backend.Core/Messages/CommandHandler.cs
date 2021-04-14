@@ -1,6 +1,6 @@
 ﻿using System.Threading.Tasks;
 using FluentValidation.Results;
-using PortTodo.Backend.WebApi.Models.Interfaces;
+using PortTodo.Backend.Core.Data;
 
 namespace PortTodo.Backend.WebApi.Core.Messages
 {

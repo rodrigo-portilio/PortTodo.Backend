@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using PortTodo.Backend.Domain.Models;
 using PortTodo.Backend.WebApi.Application.Commands;
 using PortTodo.Backend.WebApi.Application.DTO;
-using PortTodo.Backend.WebApi.Models;
 
 namespace PortTodo.Backend.WebApi.Tests
 {

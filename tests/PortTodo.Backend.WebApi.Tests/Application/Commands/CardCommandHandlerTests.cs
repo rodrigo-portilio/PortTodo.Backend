@@ -2,9 +2,9 @@
 using System.Threading.Tasks;
 using Moq;
 using Moq.AutoMock;
+using PortTodo.Backend.Domain.Interfaces;
+using PortTodo.Backend.Domain.Models;
 using PortTodo.Backend.WebApi.Application.Commands;
-using PortTodo.Backend.WebApi.Models;
-using PortTodo.Backend.WebApi.Models.Interfaces;
 using Xunit;
 
 namespace PortTodo.Backend.WebApi.Tests.Application.Commands

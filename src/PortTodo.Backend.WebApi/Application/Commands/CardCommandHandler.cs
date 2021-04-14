@@ -2,10 +2,10 @@ using System.Threading;
 using System.Threading.Tasks;
 using FluentValidation.Results;
 using MediatR;
+using PortTodo.Backend.Domain.Interfaces;
+using PortTodo.Backend.Domain.Models;
 using PortTodo.Backend.WebApi.Application.Notifications;
 using PortTodo.Backend.WebApi.Core.Messages;
-using PortTodo.Backend.WebApi.Models;
-using PortTodo.Backend.WebApi.Models.Interfaces;
 
 namespace PortTodo.Backend.WebApi.Application.Commands
 {

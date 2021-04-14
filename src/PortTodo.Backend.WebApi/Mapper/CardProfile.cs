@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using AutoMapper;
+using PortTodo.Backend.Domain.Models;
 using PortTodo.Backend.WebApi.Application.DTO;
-using PortTodo.Backend.WebApi.Models;
 
 namespace PortTodo.Backend.WebApi.Mapper
 {

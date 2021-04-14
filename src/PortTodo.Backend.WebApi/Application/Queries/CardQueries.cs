@@ -1,9 +1,9 @@
 ﻿using System.Collections.Generic;
 using System.Threading.Tasks;
 using AutoMapper;
+using PortTodo.Backend.Domain.Interfaces;
 using PortTodo.Backend.WebApi.Application.DTO;
 using PortTodo.Backend.WebApi.Application.Services;
-using PortTodo.Backend.WebApi.Models.Interfaces;
 
 namespace PortTodo.Backend.WebApi.Application.Queries
 {

@@ -1,8 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
+using PortTodo.Backend.Core.Data;
+using PortTodo.Backend.Domain.Models;
 
-namespace PortTodo.Backend.WebApi.Models.Interfaces
+namespace PortTodo.Backend.Domain.Interfaces
 {
     public interface ICardRepository : IRepository<Card>
     {

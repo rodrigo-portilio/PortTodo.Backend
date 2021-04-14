@@ -1,8 +1,8 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
-using PortTodo.Backend.WebApi.Models;
+using PortTodo.Backend.Domain.Models;
 
-namespace PortTodo.Backend.WebApi.Data.Mappings
+namespace PortTodo.Backend.Infra.Data.Mappings
 {
     public class CardMapping : IEntityTypeConfiguration<Card>
     {

@@ -4,9 +4,8 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
-using PortTodo.Backend.WebApi.Data;
 
-namespace PortTodo.Backend.WebApi.Migrations
+namespace PortTodo.Backend.Infra.Data.Migrations
 {
     [DbContext(typeof(TodoContext))]
     partial class TodoContextModelSnapshot : ModelSnapshot

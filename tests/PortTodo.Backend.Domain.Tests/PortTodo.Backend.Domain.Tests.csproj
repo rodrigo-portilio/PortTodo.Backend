@@ -7,15 +7,10 @@
     </PropertyGroup>
 
     <ItemGroup>
-        <PackageReference Include="coverlet.msbuild" Version="3.0.3">
-          <PrivateAssets>all</PrivateAssets>
-          <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
-        </PackageReference>
         <PackageReference Include="Microsoft.NET.Test.Sdk" Version="16.7.1" />
         <PackageReference Include="Moq" Version="4.16.1" />
         <PackageReference Include="Moq.AutoMock" Version="2.3.0" />
         <PackageReference Include="xunit" Version="2.4.1" />
-        <PackageReference Include="Xunit.Priority" Version="1.1.6" />
         <PackageReference Include="xunit.runner.visualstudio" Version="2.4.3">
             <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
             <PrivateAssets>all</PrivateAssets>
@@ -27,8 +22,8 @@
     </ItemGroup>
 
     <ItemGroup>
+      <ProjectReference Include="..\..\src\PortTodo.Backend.Domain\PortTodo.Backend.Domain.csproj" />
       <ProjectReference Include="..\..\src\PortTodo.Backend.WebApi\PortTodo.Backend.WebApi.csproj" />
-      <ProjectReference Include="..\PortTodo.Backend.Domain.Tests\PortTodo.Backend.Domain.Tests.csproj" />
     </ItemGroup>
 
 </Project>

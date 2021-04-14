@@ -40,12 +40,5 @@ If you liked the project, please give a star
 - Repository  
 - Unit Test
 
-
-## News
-
-**V0.1.0 - 04/05/2021**
-
-- Was created the project
-
 ## Author
 The project Todo.Backend was developed by Rodrigo Portilio under the MIT License

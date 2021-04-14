@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace PortTodo.Backend.WebApi.Models.Interfaces
+namespace PortTodo.Backend.Core.Data
 {
     public interface IRepository<T> : IDisposable where T : IAggregateRoot
     {

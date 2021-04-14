@@ -1,13 +1,13 @@
 ﻿using FluentValidation.Results;
 using MediatR;
 using Microsoft.Extensions.DependencyInjection;
+using PortTodo.Backend.Domain.Interfaces;
+using PortTodo.Backend.Infra.Data;
+using PortTodo.Backend.Infra.Data.Repositories;
 using PortTodo.Backend.WebApi.Application.Commands;
 using PortTodo.Backend.WebApi.Application.Queries;
 using PortTodo.Backend.WebApi.Application.Services;
 using PortTodo.Backend.WebApi.Core.Mediator;
-using PortTodo.Backend.WebApi.Data;
-using PortTodo.Backend.WebApi.Data.Repositories;
-using PortTodo.Backend.WebApi.Models.Interfaces;
 
 namespace PortTodo.Backend.WebApi.Configuration
 {

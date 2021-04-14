@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 using PortTodo.Backend.WebApi.Core.Messages;
 
-namespace PortTodo.Backend.WebApi.Models
+namespace PortTodo.Backend.Domain.Models
 {
     public abstract class Entity
     {

@@ -2,10 +2,11 @@
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
-using PortTodo.Backend.WebApi.Models;
-using PortTodo.Backend.WebApi.Models.Interfaces;
+using PortTodo.Backend.Core.Data;
+using PortTodo.Backend.Domain.Interfaces;
+using PortTodo.Backend.Domain.Models;
 
-namespace PortTodo.Backend.WebApi.Data.Repositories
+namespace PortTodo.Backend.Infra.Data.Repositories
 {
     public class CardRepository : ICardRepository
     {
