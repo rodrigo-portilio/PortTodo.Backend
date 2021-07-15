@@ -35,7 +35,7 @@ services:
         ports:
             - "5000:5000"
         environment:
-            - ASPNETCORE_ENVIRONMENT=Production
+            - ASPNETCORE_ENVIRONMENT=Development
             - ASPNETCORE_URLS=http://*:5000
             - POSTGRESQL_CONNECTION=Host=postgres-porttodo;Port=5432;Pooling=true;Database=PortTodo;User Id=postgres;Password=Aa@123456789;
             - REDIS_CONNECTION=redis-porttodo:6379

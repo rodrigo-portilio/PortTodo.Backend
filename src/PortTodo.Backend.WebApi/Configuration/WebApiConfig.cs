@@ -1,4 +1,3 @@
-using System;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.EntityFrameworkCore;
@@ -13,20 +12,14 @@ namespace PortTodo.Backend.WebApi.Configuration
     {
         public static void AddWebApiConfiguration(this IServiceCollection services, IConfiguration configuration)
         {
-            var postgresql_connection = Environment.GetEnvironmentVariable("POSTGRESQL_CONNECTION");
-            if (string.IsNullOrEmpty(Environment.GetEnvironmentVariable("POSTGRESQL_CONNECTION")))
-            {
-                postgresql_connection = "Host=localhost;Port=5432;Pooling=true;Database=Todo;User Id=postgres;Password=Aa@123456789;";
-            }
-
             services.AddDbContext<TodoContext>(options => 
             {
-                options.UseNpgsql(postgresql_connection);
+                options.UseNpgsql(configuration.GetSection("POSTGRESQL_CONNECTION").Value);
             });
 
             services.AddStackExchangeRedisCache(options => 
             {
-                options.Configuration = Environment.GetEnvironmentVariable("REDIS_CONNECTION");
+                options.Configuration = configuration.GetSection("REDIS_CONNECTION").Value;
             });
 
             services.AddControllers();
